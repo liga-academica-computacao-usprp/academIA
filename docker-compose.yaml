@@ -4,11 +4,11 @@ services:
     restart: always
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
-      #- ./script.sql:/docker-entrypoint-initdb.d/script.sql
+      - ./migration/define_db.sql:/docker-entrypoint-initdb.d/script.sql
     environment:
       - POSTGRES_USER=gym
       - POSTGRES_PASSWORD=senha123
-      - POSTGRES_DB=academIA
+      - POSTGRES_DB=academia
     ports: 
       - "5432:5432"
       
